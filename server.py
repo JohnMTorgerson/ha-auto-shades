@@ -5,6 +5,7 @@ import datetime
 import json
 import sys
 import os
+import auto_shades
 # sys.path.insert(1, os.path.abspath('./'))
 # from helpers import object_equals
 # import copy
@@ -41,7 +42,18 @@ def run_shades():
 
     # return jsonify(results)
 
-    return "successfully received data"
+    try:
+        dir = data["dir"]
+        assert dir in ["up","down"]
+        auto_shades.run(dir) # call function to actually move the window shades
+        return f"accepted request: moving windows {dir}"
+    except KeyError as e:
+        logger.error(f"received bad data from home-automation: {json.dumps(data)}")
+        return f"Error: bad request: data did not include a direction to move the shades"
+    except AssertionError as e:
+        logger.error(f"received bad data from home-automation: {json.dumps(data)}")
+        return f"Error: bad request: 'dir' value should be either 'up' or 'down'"
+
 
 if __name__ == '__main__':
    app.run(debug=False,use_reloader=True,host="0.0.0.0") # use host="0.0.0.0" to make visible to other machines on the network; use debug=False when doing this, for security

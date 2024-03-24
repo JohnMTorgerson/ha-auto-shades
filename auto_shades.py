@@ -10,7 +10,8 @@ import asyncio
 def run(dir): # dir indicates direction to move shade: 'up' for up, or 'down' for down
     window_info = get_window_info()
 
-    GPIO.cleanup()
+    # GPIO.cleanup()
+    GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
 
     async def loop_windows() :
