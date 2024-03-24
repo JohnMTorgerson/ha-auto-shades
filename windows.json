@@ -1,5 +1,6 @@
 {
     "se" : {
+        "name" : "SE living room",
         "dir_pin" : 23,
         "pul_pin" : 24,
         "ena_pin" : 25,
