@@ -51,11 +51,11 @@ async def run_window(w,dir):
     dir -- a string which should be either "up" or "down" to indicate which profile to use
     '''
 
-    name = w["name"]
-    logger.debug(f"Running {name} window")
-
-    if dir != "up" and dir != "down" :
+    if dir not in ["up","down"] :
         raise ValueError("value of dir should be either 'up' or 'down'")
+    
+    name = w["name"]
+    logger.debug(f"Running {name} window {dir}")
 
     dir_pin = w["dir_pin"]
     pul_pin = w["pul_pin"]
