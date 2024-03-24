@@ -3,7 +3,8 @@
         "dir_pin" : 23,
         "pul_pin" : 24,
         "ena_pin" : 25,
-        "revs" : 32,
-        "steps_per_rev" : 1600
+        "steps_per_rev" : 1600,
+        "up" : [33,-1],
+        "down" : [-32]
     }
 }
