@@ -2,3 +2,5 @@
 .env
 
 small_test.py
+
+logs/

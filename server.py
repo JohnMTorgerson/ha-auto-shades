@@ -41,5 +41,7 @@ def run_shades():
 
     # return jsonify(results)
 
+    return "successfully received data"
+
 if __name__ == '__main__':
-   app.run(debug=False,use_reloader=True)
+   app.run(debug=False,use_reloader=True,host="0.0.0.0") # use host="0.0.0.0" to make visible to other machines on the network; use debug=False when doing this, for security
