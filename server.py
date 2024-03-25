@@ -46,7 +46,7 @@ def run_shades():
         dir = data["dir"]
         assert dir in ["up","down"]
         auto_shades.run(dir) # call function to actually move the window shades
-        return f"accepted request: moving windows {dir}"
+        return f"Success: moving windows {dir}"
     except KeyError as e:
         logger.error(f"received bad data from home-automation: {json.dumps(data)}")
         return f"Error: bad request: data did not include a direction to move the shades"
