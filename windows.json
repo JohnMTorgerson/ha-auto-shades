@@ -7,5 +7,14 @@
         "steps_per_rev" : 1600,
         "up" : [33,-1],
         "down" : [-32]
+    },
+    "ne" : {
+        "name" : "NE living room",
+        "dir_pin" : 13,
+        "pul_pin" : 19,
+        "ena_pin" : 26,
+        "steps_per_rev" : 1600,
+        "up" : [32,-1],
+        "down" : [-31]
     }
 }

@@ -23,8 +23,8 @@ try:
   while True:
     revs = input("How many revolutions forward? ")
     print(f"revs == {revs}")
-    steps = int(revs) * steps_per_rev
-    if int(steps) < 0:
+    steps = int(float(revs) * steps_per_rev)
+    if steps < 0:
         GPIO.output(dir_pin,1)
         steps = -steps
     else:
@@ -32,7 +32,7 @@ try:
 
     print(f"steps == {steps}")
 
-    for i in range(int(steps)):
+    for i in range(steps):
         if i%steps_per_rev == 0 :
            print(f"{i} -- {i/steps_per_rev}")
            
